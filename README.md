@@ -1,4 +1,5 @@
 # zkspringhb
+![Imgur](http://i.imgur.com/zaVMCdT.png)
 ZK Framework + Spring Framework + Hibernate Framework + Apache Ant + MySQL.
 
 ## Installation
