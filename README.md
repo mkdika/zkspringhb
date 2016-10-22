@@ -1,6 +1,7 @@
 # zkspringhb
-![Imgur](http://i.imgur.com/zaVMCdT.png)
 ZK Framework + Spring Framework + Hibernate Framework + Apache Ant + MySQL.
+
+![Imgur](http://i.imgur.com/zaVMCdT.png)
 
 ## Installation
 1. Run file `initdb.sql` to dump the database
