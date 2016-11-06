@@ -74,8 +74,7 @@
                                 <listheader label="ID" align="left" sort="auto" />
                                 <listheader label="Person Name" align="left" sort="auto" />
                                 <listheader label="Email" align="left" sort="auto" />
-                                <listheader label="Birthday" align="left" sort="auto" />                  
-                                
+                                <listheader label="Birthday" align="left" sort="auto" />                                                  
                             </listhead>
                             <template name="model" var="item">
                                 <listitem >

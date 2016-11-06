@@ -1,6 +1,7 @@
 package com.mkdika.zkspringhb.service;
 
 import com.mkdika.zkspringhb.entity.Person;
+import com.mkdika.zkspringhb.entity.PersonDto;
 import java.util.List;
 
 /**
@@ -18,4 +19,7 @@ public interface ServiceDao {
     public Person getPersonById(Integer id);
     
     public List<Person> getPersons();                           
+    
+    // interface untuk contoh native query via hibernate
+    public List<PersonDto> getPersonQueryByGender(Integer gender);
 }

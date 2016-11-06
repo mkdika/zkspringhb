@@ -1,7 +1,8 @@
 package com.mkdika.zkspringhb.service;
 
-
 import com.mkdika.zkspringhb.entity.Person;
+import com.mkdika.zkspringhb.entity.PersonDto;
+import java.io.IOException;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -37,7 +38,7 @@ public class ServiceDaoImpl implements ServiceDao {
         getCurrentSession().delete(obj);
         return true;
     }
-    
+
     @Override
     @Transactional(readOnly = false)
     public boolean truncateDb() {
@@ -55,5 +56,15 @@ public class ServiceDaoImpl implements ServiceDao {
     public List<Person> getPersons() {
         List<Person> list = getCurrentSession().createQuery("FROM Person a ORDER BY a.personname ASC").list();
         return list;
-    }   
+    }
+
+    // contoh pengunaan native query db di dalam serviceDaoImpl dengan memanfaatkan fitur createSQLQery hibernate
+    // sql yg ditulis adalah sql query native ke db bersangkutan, dalam hal ini MySQL.
+    @Override
+    public List<PersonDto> getPersonQueryByGender(Integer gender) {
+        return (List<PersonDto>) getCurrentSession().createSQLQuery("SELECT id, personname as name, email as mail FROM person WHERE gender = :gender") // ini adalah native sql query, bukan hql.
+                .addEntity(PersonDto.class)
+                .setParameter("gender", gender)
+                .list();
+    }
 }
